@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Ken Moini
-  description: Install Katello/Satellite agent on new hosts and register with activation key
+  description: Enable repositories on Red Hat Enterprise Linux Systems
   company: Polyglot Ventures
   license: MIT
   min_ansible_version: 1.2

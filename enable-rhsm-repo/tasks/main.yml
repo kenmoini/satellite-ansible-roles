@@ -1,0 +1,4 @@
+---
+- name: Enable Repositories via RHSM...
+  rhsm_repository:
+    name: "{{ repository_name }}"
