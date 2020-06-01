@@ -1,0 +1,22 @@
+---
+- name: Download katello agent
+  get_url:
+    url: "{{ satellite_link }}"
+    dest: /opt/katello-ca-consumer-latest.noarch.rpm
+    mode: '0755'
+    
+- name: Install katello rpm from local file
+  yum:
+    name: /opt/katello-ca-consumer-latest.noarch.rpm
+    state: present
+    disable_gpg_check: yes
+    validate_certs: no
+    
+- name: Clean RHSM
+  shell: subscription-manager clean
+
+- name: Register with activation key
+  redhat_subscription:
+    state: present
+    activationkey: "{{ satellite_activation_key }}"
+    org_id: "{{ satellite_org_name }}"
