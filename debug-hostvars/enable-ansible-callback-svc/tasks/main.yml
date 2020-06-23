@@ -1,0 +1,5 @@
+---
+- name: Display all variables/facts
+  debug:
+    var: hostvars
+    verbosity: 4
