@@ -1,0 +1,5 @@
+---
+- name: Enable ansible-callback service
+  service:
+    name: ansible-callback
+    state: started
